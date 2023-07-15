@@ -1,0 +1,56 @@
+module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  extends: [
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+    'plugin:prettier/recommended',
+    'plugin:@next/next/recommended',
+  ],
+  plugins: ['prettier', 'react-hooks', 'unused-imports'],
+  rules: {
+    'no-console': 0,
+    'import/named': 0,
+    'import/order': 1,
+    'import/no-named-as-default': 0,
+    'react/no-unescaped-entities': 'off',
+    '@next/next/no-page-custom-font': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-uses-react': 'off',
+    'import/no-default-export': 0,
+    '@typescript-eslint/ban-types': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-unnecessary-type-constraint': 0,
+    '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-unused-vars': 0,
+    'unused-imports/no-unused-imports': 2,
+    'unused-imports/no-unused-vars': [
+      1,
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
+    'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': 1,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/resolver': {
+      typescript: {},
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+        moduleDirectory: ['node_modules', 'src'],
+      },
+    },
+  },
+}
